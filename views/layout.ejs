@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title><%=title%></title>
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Google Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+        <!-- Bootstrap core CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Material Design Bootstrap -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/css/mdb.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        
+        <!-- JQuery -->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <!-- Bootstrap tooltips -->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+     <!-- Bootstrap core JavaScript -->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+     <!-- MDB core JavaScript -->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+
+    <body>
+
+       
+        <nav class="navbar navbar-default fixed-top w-70" style="position: absolute;left: 20%;">
+        
+        
+            <a href="#" class="toggle-button">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </a>
+            <div class="navbar-links">
+              <ul>
+                <li><a href="#">Upgrade</a></li>
+                <li><a href="#">Sign In</a></li>
+              </ul>
+            </div>
+          </nav>
+    
+        <%- body %>
+
+
+        <script>
+            $(function () {
+      $("#main_div").scroll(function () {
+        var $nav = $(".navbar");
+        $nav.toggleClass('toggle_bg_color', $('#main_div').scrollTop()>5);
+    
+        // var $a=$(".acolor");
+        // $a.toggleClass('text-color',$(this).scrollTop()>5);
+      });
+    });
+</script>
+        <script src="/js/script.js"></script>
+    </body>
+</html>

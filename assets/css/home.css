@@ -1,0 +1,603 @@
+body{
+    background: black;
+}
+
+#main_div::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+  #main_div::-webkit-scrollbar-thumb {
+    background-color: #909090;
+    outline: 1px solid #909090;
+  }
+
+#main_div{
+    background: #121212;
+    position: absolute;
+    padding-top: 5rem;
+    left: 20%;
+    top: -2%;
+    height: 82%;
+    width: 80%;
+    overflow:auto;
+}
+
+
+.section_head{
+    background: -webkit-linear-gradient(#C3C3C3,white);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+    margin-bottom: 1.35rem;
+    font-weight: 800;
+}
+
+.see_all_button{
+    color: #B3B3B3;
+    float: right;
+    margin-top: -3.9%;
+    margin-left: -3%;
+    font-size: 0.78rem;
+    font-weight: bold;
+}
+
+.see_all_button:hover{
+    color: #B3B3B3;
+}
+
+#Charts{
+    margin-top: 2.5rem;
+}
+.card_color{
+    background: #282828;
+    height: 16.8rem !important;
+    width: 12rem;
+    border-radius:5% ;
+}
+
+.card-image{
+    height:10rem;
+}
+
+.card-head{
+    color: white;
+    margin-top: -0.2rem;
+    font-size: 1rem;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    text-transform: capitalize;
+    font-weight: 900;
+}
+
+.card-para{
+    color: white;
+    margin-top: -0.3rem;
+    font-size: 0.76rem !important;
+}
+
+.play_button{
+    display: none;
+}
+
+.card:hover button{
+    display: inline-block;
+    z-index: 5;
+    position: absolute;
+    top: 80%;
+    left: 72%;
+    height: 2.3rem;
+    width: 2.4rem;
+    border-radius: 50%;
+    background: #1DB954;
+    border: 1px solid #1DB954;
+}
+#triangle{
+    display: none;
+}
+.card:hover #triangle{
+    width: 0;
+    display: inline-block;
+    height: 0;
+    left: 80%;
+    top: 85%;
+    z-index: 9;
+    position: absolute;
+    border-top: 0.350rem solid transparent;
+    border-left: 0.625rem solid white;
+    border-bottom: 0.350rem solid transparent;
+}
+
+#Podcast{
+    margin-top: 1.4rem;
+}
+
+#podcast_para{
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    color: #A7A7A7;    
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#Popular_Playlist{
+    margin-top: 1.4rem;
+}
+
+#Mood{
+    margin-top: 1.4rem;
+}
+
+.mood_para{
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    color: #A7A7A7;    
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#Sleep{
+    margin-top: 1.4rem;
+}
+
+#Popular_albums{
+    margin-top: 1.4rem;
+}
+
+#Trending_now{
+    margin-top: 1.4rem;
+}
+
+#Focus{
+    margin-top: 1.4rem;
+}
+
+.focus_para{
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+    color: #A7A7A7;    
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+#Sound_of_india{
+    margin-top: 1.4rem;
+}
+
+#new_releases{
+    margin-top: 1.4rem;
+}
+
+#Editor_picks{
+    margin-top: 1.4rem;
+}
+
+#soundtrack_home{
+    margin-top: 1.4rem;
+}
+
+#artists{
+    margin-top: 1.4rem;
+}
+
+/* aside section */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  #sidebar{
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    background: #151719;
+    left: -200px;
+    transition: all 500ms linear;
+   }
+  
+   #sidebar.active{
+    left:0px;
+   }
+  
+   #sidebar ul li{
+    color: rgba(230,230,230,0.9);
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100,100,100,0.3);
+    width: 100%;
+   }
+  
+   #sidebar .toggle-btn{
+    position: absolute;
+    left: 230px;
+    top: 20px;
+   }
+  
+   #sidebar .toggle-btn span{
+    display: block;
+    width: 30px;
+    height: 5px;
+    background: whitesmoke;
+    margin: 5px 0px;
+   }
+  
+  #sidebar{
+    width: 200px;
+    height: 100%;
+    background:black;
+    padding: 30px 0px;
+    position: fixed;
+  }
+  
+  #sidebar ul li a .fas{
+    width: 25px;
+  }
+  
+  #sidebar ul li:hover{
+    background-color: #2AA33D;
+    width: 140%;
+  }
+  
+  #sidebar ul li a{
+    color: #bdb8d7;
+    display: block;
+    text-decoration: none;
+  }
+  
+  #sidebar ul li:hover a{
+    color: #fff;
+  }
+  
+  #sidebar ul li{
+    padding: 15px;
+    border-bottom: 1px solid #bdb8d7;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    width: 100%;
+  }    
+  
+  #sidebar .social_media{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+  
+  #sidebar .social_media a{
+    display: block;
+    width: 40px;
+    background: #2AA33D;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0 5px;
+    color: #bdb8d7;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+
+  /* logo */
+
+  /* Nav-Bar */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse;
+    align-items: flex-end;
+    color: white;
+    height: 3.5rem;
+    z-index: 10;
+    border: none;
+    box-shadow: none;
+}
+
+.bg_color{
+    background: transparent;
+}
+
+.fixed-top.toggle_bg_color{
+    background: black!important;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+    margin-right: auto;
+    display: inline;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: #2AA33D;
+    height: 3rem;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+
+  /*audio bar*/
+  /* .marg-top{
+    margin-top: -20px;
+}
+.marg-bot{
+    margin-bottom: 70px;
+} */
+#music_bar{
+    height: 0;
+    width: 0;
+    position: fixed;
+    top:76.2%;
+    visibility: visible;
+  }
+  .section6{
+    display: flex;
+    align-items: baseline;
+    position: relative;
+    width: 100vw;
+    z-index: -1;
+  }
+  .background_color{
+    height: 8rem;
+    width:100%;
+    /* z-index: -1; */
+    background-color: #101119;
+    position: relative;
+  }
+  .music_player_img{
+    height: 60px;
+    width: 70px;
+    z-index: 1;
+    background-image: url(images/geazy.jpg);
+    background-position: center;
+    background-size: cover;
+    position:absolute;
+    left: 3.5rem;
+  }
+  .white_text{
+    color: lightgrey;
+    font-size: 1rem;
+    font-family: sans-serif;
+    font-weight: lighter;
+    position: relative;
+    left: 5rem;
+    /* top: rem; */
+  }
+  .grey_text{
+    color: grey;
+    font-size: .9rem;
+    position: relative;
+    left: 5rem;
+    top: -.8rem;
+  }
+  .music_payer_heart,.ban_symbol{
+    color:grey;
+    position: relative;
+    left: 13rem;
+    top: -5rem;
+    padding: .5rem;
+    display: inline-block;
+  }
+  .music_payer_heart:hover{
+    border-radius: 50%;
+    box-shadow: 0px 0px 6px 4px lightgrey;
+  }
+  .ban_symbol:hover,.shuffle:hover,.step_backward:hover,
+  .step_forward:hover,.repeate:hover
+  {
+    border-radius: 50%;
+    box-shadow: 0px 0px 6px 4px lightgrey;
+  }
+  .shuffle{
+    color: grey;
+    position: relative;
+    left: 30rem;
+    top: -7rem;
+    display: inline-block;
+    padding: .5rem;
+  }
+  .step_backward{
+    color: grey;
+    position: relative;
+    left: 31rem;
+    top: -7rem;
+    display: inline-block;
+    padding: .5rem;
+  }
+  .pause1{
+    color: lightgrey;
+    position: relative;
+    left: 36rem;
+    top: -9.5rem;
+    font-weight: lighter;
+    display: inline-block;
+    font-size: 1.8rem;
+    padding: .5rem;
+  }
+  .step_forward{
+    color: grey;
+    position: relative;
+    left: 40rem;
+    top: -12rem;
+    display: inline-block;
+    padding: .5rem;
+  }
+  .repeat{
+    color: grey;
+    position: relative;
+    left: 41rem;
+    top: -12rem;
+    display: inline-block;
+    padding: .5rem;
+  }
+  .time{
+    color: grey;
+    font-size: .9rem;
+    position: relative;
+    top: -12.5rem;
+    left: 20rem;
+    font-style:normal;
+
+  }
+  .time_rigth{
+    color: grey;
+    font-size: .9rem;
+    position: relative;
+    top: -15.5rem;
+    left: 55rem;
+    font-style:normal;
+
+  }
+  .running_bar_green{
+    height: 0px;
+    width: 150px;
+    border:3px solid #30B077;
+    border-radius: 10px;
+    position: relative;
+    left: 23rem;
+    top: -13.15rem;
+  }
+  .small_circle{
+    color: white;
+    position: relative;
+    left: 32.5rem;
+    top: -14.2rem;
+  }
+  .running_bar_white{
+    height: 0px;
+    width: 330px;
+    border:3px solid lightgrey;
+    border-radius: 10px;
+    position: relative;
+    left: 33rem;
+    top: -13.5rem;
+  }
+  .stack{
+    color: grey;
+    position: relative;
+    left: 62rem;
+    top: -17.4rem;
+  }
+  .computer{
+    color: grey;
+    position: relative;
+    left: 64.8rem;
+    top: -18.5rem;
+  }
+  .volume{
+    color: grey;
+    position: relative;
+    left: 67.5rem;
+    top: -19.6rem;
+  }
+  .running_bar_green1{
+    height: 0px;
+    width: 40px;
+    border:3px solid #30B077;
+    border-radius: 10px;
+    position: relative;
+    left: 69rem;
+    top: -20.5rem;
+  }
+  .running_bar_white1{
+    height: 0px;
+    width: 30px;
+    border:3px solid lightgrey;
+    border-radius: 10px;
+    position: relative;
+    left: 72rem;
+    top: -20.9rem;
+  }
+  .small_circle1{
+    color: white;
+    position: relative;
+    left: 71.5rem;
+    top: -21.6rem;
+  }
+  .full_screen{
+    color: grey;
+    position: relative;
+    left: 76.1rem;
+    top: -23.1rem;
+    font-size: 1.5rem;
+  }
