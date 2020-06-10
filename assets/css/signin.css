@@ -13,8 +13,11 @@
 }
 
 .colored_div_header_title{
+    position: absolute;
+    left: 70%;
+    top: 50%;
     background: -webkit-linear-gradient(#4F0F31,#4456B5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    z-index: 30;
+    transform:skew(-30deg)
 }

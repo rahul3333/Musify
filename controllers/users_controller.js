@@ -3,3 +3,9 @@ module.exports.signin=(req,res)=>{
         title:'Sign In'
     })
 }
+
+module.exports.signup=(req,res)=>{
+    res.render('sign-up',{
+        title:'Sign Up'
+    })
+}

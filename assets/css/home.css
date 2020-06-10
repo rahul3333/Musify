@@ -508,7 +508,7 @@ body {
 }
 
 #tracker{
-    display: none;
+    display: inline-block;
     background-color: white;
     margin-top: -0.2rem;
     height: 0.8rem;

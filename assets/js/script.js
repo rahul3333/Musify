@@ -14,7 +14,7 @@ var width=1;
    if(document.getElementById('play').src=='http://localhost:8000/images/playbutton.png')
     {
       document.getElementById('play').src='/images/pause.png';
-      id=setInterval(progress,1000);
+      id=setInterval(progress,10);
     }
     else{
       document.getElementById('play').src='/images/playbutton.png';
