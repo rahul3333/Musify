@@ -1,6 +1,20 @@
 
 <!-- navbar -->
-
+<nav class="navbar navbar-default fixed-top w-70" style="position: absolute;left: 20%;">
+        
+        
+    <a href="#" class="toggle-button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+    <div class="navbar-links">
+      <ul>
+        <li><a href="#">Upgrade</a></li>
+        <li><a href="#">Sign In</a></li>
+      </ul>
+    </div>
+  </nav>
 <!-- sidebar -->
 <div id="sidebar">
     <div class="mt-n3 mb-2">
@@ -1073,70 +1087,23 @@
                     </div>
                 </div>
             </div>
-        </section>
-
-       
+        </section>       
 </div>
 
-<div id="music_bar">
-    <a href="#"> . </a>
-    <div class="section6">
-   <div class="background_color">
-   <div class="music_player_img">
-   <p class="white_text">No Limit</p>
-   <p class="grey_text">G-EAZY</p>
-
-   <div class="music_payer_heart">
-   <i class="far fa-heart"></i>
- </div>
- <div class="ban_symbol">
- <i class="fas fa-ban"></i>
-</div>
-<div class="shuffle">
-<i class="fas fa-random"></i>
-</div>
-<div class="step_backward">
-<i class="fas fa-step-backward"></i>
-</div>
-<div class="pause1">
-<i class="far fa-pause-circle" ></i>
-</div>
-<div class="step_forward">
-<i class="fas fa-step-forward"></i>
-</div>
-<div class="repeat">
-<i class="fas fa-redo"></i>
-</div>
-<span class="time">02:10</span>
-<div class="running_bar_green">
-</div>
-<div class="running_bar_white">
-
-</div>
-<div class="small_circle">
-<i class="fas fa-circle"></i>
-</div>
-<span class="time_rigth">05:20</span>
-<div class="stack">
-<i class="fas fa-server"></i>
-</div>
-<div class="computer">
-<i class="fas fa-desktop"></i>
-</div>
-<div class="volume">
-<i class="fas fa-volume-up"></i>
-</div>
-<div class="running_bar_green1">
-</div>
-<div class="running_bar_white1">
-</div>
-<div class="small_circle1">
-<i class="fas fa-circle"></i>
-</div>
-<div class="full_screen">
-<i class="fas fa-expand"></i>
-</div>
-</div>
-</div>
-</div>
+<div class="audio p-2">
+    <div class="audio_info">
+        <img src="/images/arijit_singh.jpg" alt="" class="audio_image">
+        <p class="song_name">Song name <br> <span class="singer">Singer name</span> </p>
+    </div>
+    <audio src=""class="audio_bar"></audio>
+    <div class='btns'>
+        <input type="image" src="/images/playbutton.png" class="audio_play_button" id="play" alt="">
+        <img src="/images/next_img.png" class="next_icon" alt="">
+        <img src="/images/next_img.png" class="next_icon_flip" alt="">
+      </div>
+      <div id='progress'>
+        <div id="go_progress">
+            <div id="tracker"></div>
+        </div>
+      </div>
 </div>
