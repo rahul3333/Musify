@@ -1,0 +1,20 @@
+#signin_main_div{
+    background-color: #2F303A;
+    width: 100%;
+    height: 100%;
+}
+
+.colored_div{
+    width: 82%;
+    height: 100%;
+    background: linear-gradient(#24AE31,#72CAC5,#C0E7B9);
+    transform: translate(-38%) skew(30deg);
+
+}
+
+.colored_div_header_title{
+    background: -webkit-linear-gradient(#4F0F31,#4456B5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 30;
+}
