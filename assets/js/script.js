@@ -39,3 +39,6 @@ var width=1;
     element.style.width = width + "%";
   }
  }
+
+
+ 

@@ -1,8 +1,6 @@
 
 <!-- navbar -->
-<nav class="navbar navbar-default fixed-top w-70" style="position: absolute;left: 20%;">
-        
-        
+<nav class="navbar navbar-default fixed-top w-70" style="position: absolute;left: 20%;"> 
     <a href="#" class="toggle-button">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -10,12 +8,13 @@
     </a>
     <div class="navbar-links">
       <ul>
-        <li><a href="#">Upgrade</a></li>
-        <li><a href="#">Sign In</a></li>
+        <li><a href="/users/signup" data-animsition-out-class="overlay-slide-right" data-animsition-out-duration="500" class="nav_sign_up animsition-link">Sign Up</a></li>
+        <li><a href="/users/signin" class="nav_sign_in animsition-link">Sign In</a></li>
       </ul>
     </div>
   </nav>
 <!-- sidebar -->
+<div class="external m-0 p-0 h-100" style="background-color: black;">
 <div id="sidebar">
     <div class="mt-n3 mb-2">
         <img src="/images/logo.png">
@@ -1093,12 +1092,12 @@
 </div>
 
 <div class="audio p-2">
-    <div class="audio_info">
+    <!-- <div class="audio_info">
         <img src="/images/arijit_singh.jpg" alt="" class="audio_image">
         <p class="song_name">Song name <br> <span class="singer">Singer name</span> </p>
-    </div>
-    <audio src=""class="audio_bar"></audio>
-    <div class='btns'>
+    </div> -->
+    <audio src="<%=music[0].song%>" type="audio/m4a" controls class="audio_bar"></audio>
+    <!-- <div class='btns'>
         <input type="image" src="/images/playbutton.png" class="audio_play_button" id="play" alt="">
         <img src="/images/next_img.png" class="next_icon" alt="">
         <img src="/images/next_img.png" class="next_icon_flip" alt="">
@@ -1107,5 +1106,6 @@
         <div id="go_progress">
             <div id="tracker"></div>
         </div>
-      </div>
+      </div> -->
+</div>
 </div>

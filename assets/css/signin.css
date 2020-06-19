@@ -11,13 +11,137 @@
     transform: translate(-38%) skew(30deg);
 
 }
-
+@media (min-width: 1200px){
 .colored_div_header_title{
     position: absolute;
-    left: 70%;
-    top: 50%;
+    left: 60%;
+    top: 40%;
     background: -webkit-linear-gradient(#4F0F31,#4456B5);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    transform:skew(-30deg)
+    transform:skew(-30deg);
+}
+
+.signin_logo{
+    position: absolute;
+    left: 53%;
+    top: 39%;
+    transform:skew(-30deg);
+}
+.green_div_para{
+    position: absolute;
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 43%;
+    margin-top: 28%;
+    transform:skew(-30deg);
+}
+}
+
+.second_half{
+    position: absolute;
+    float: right;
+    left: 70%;
+    top: 8%;
+    max-width:40vw ;
+    max-height: 80vh;
+}
+
+.form_head{
+    font-size: 2.3vw;
+    font-weight: bold;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(#24AE31,#72CAC5,#C0E7B9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 5vw;
+}
+
+.username_para{
+    font-family: monospace;
+    font-size: 1.3vw;
+}
+
+#username_text{
+    border: 2px solid #2FA347;
+    border-radius: 10px;
+    background: transparent;
+    margin-bottom: 2vw;
+    height: 5.5vh;
+    width: 17.8vw;
+    color: white;
+    outline: none;
+    font-size: 1vw;
+}
+
+.password_para{
+    font-family: monospace;
+    font-size: 1.3vw;
+}
+
+#password_text{
+    border: 2px solid #2FA347;
+    border-radius: 10px;
+    background: transparent;
+    margin-bottom: 3vw;
+    height: 5.5vh;
+    color: white;
+    width: 17.8vw;
+    outline: none;
+}
+
+#signin_submit{
+    background: linear-gradient(180deg, #2EA345 0%, #5A9A96 50.52%, #708776 100%);
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    border: 1px solid #2EA345;
+    border-radius: 20px;
+    width: 18.5vw;
+    height: 6vh;
+    color: #FFFEFE;
+    margin-bottom: 1vw;
+}
+
+.to_signup{
+    color: white;
+    font-size: 1vw;
+    margin-top: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.fromintoup:hover{
+    background: -webkit-linear-gradient(#36A253,#5B9A97,#6F8979);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+
+.auth_signin_para{
+    color: white;
+    font-size: 1vw;
+    margin-left: 8vw;
+    text-transform: uppercase;
+    margin-top: -0.8rem;
+    font-weight: bold;
+}
+
+.auth_opt{
+    text-transform: none;
+    margin-left:-1.8vw ;
+    font-weight:normal ;
+}
+
+.auth_icons{
+    max-width: 2.5vw;
+    max-height: 2.5vh;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.auth_icon_img{
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: -0.5vw;
+    margin-left: 4.3vw;
 }

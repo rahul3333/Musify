@@ -1,0 +1,24 @@
+
+      <div id="song_info_div" class="slide active">
+        <form action="/music/upload_song_info" method="POST">
+         Name: <input type="text" name="name" id="">
+         Singer name: <input type="text" name="singername" id="">
+         <input type="submit" value="Next" id="song_info_div_submit">
+        </form>
+      </div>
+      
+      
+
+
+      <script>
+        $('#song_info_div_submit').click(function(){
+  var currentSlide=$('.slide.active');
+  var nextSlide=currentSlide.next();
+  console.log('Script Called');
+  var e = $('.song_form');
+  e[0].style.display="block";
+  currentSlide.fadeOut(200).removeClass('active');
+  nextSlide.fadeIn(50).addClass('active');
+});
+      </script>
+      

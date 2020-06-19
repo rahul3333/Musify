@@ -1,5 +1,24 @@
-<div class="container-fluid m-0 p-0" id="signin_main_div">
+<div class="container-fluid m-0 p-0 animsition-overlay" id="signin_main_div">
     <div class="colored_div">
-        <h2 class="colored_div_header_title">Musify</h2>
+        <img src="/images/logo.png" class=" signin_logo" alt="">
+        <h1 class="colored_div_header_title">Musify</h1>
+        <p class="green_div_para">Your own music hub for the latest songs.</p>
+    </div>
+    <div class="second_half">
+        <p class="form_head">Login</p>
+        <form action="/users/signin_user" method="POST">
+            <p class="username_para">Username or Email:</p>
+            <input type="text" name="email" id="username_text">
+            <p class="password_para">Password:</p>
+            <input type="password" name="password" id="password_text"><br>
+            <input type="submit" value="Sign In" id="signin_submit">
+        </form>
+        <p class="to_signup">Don't have an account?<a href="/users/signup" class="fromintoup"> Sign Up</a></p>
+        <p class="auth_signin_para">or <br><span class="auth_opt"> Sign In with:</span></p>
+
+        <div class="auth_icons">
+            <img src="/images/search.png" alt="" class="auth_icon_img">
+            <img src="/images/facebook.png" alt="" class="auth_icon_img">
+        </div>
     </div>
 </div>
