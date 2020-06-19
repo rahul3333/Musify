@@ -18,7 +18,7 @@ module.exports.uploadSong=(req,res)=>{
 }
 module.exports.upload_info=async (req,res)=>{
     try {
-        Music.findOne({name:req.body.name},(error,music)=>{
+        Music.findOne({name:req.body.name},async (error,music)=>{
             if(error){
                 console.log('Error in finding song');
                 res.redirect('back');
@@ -30,10 +30,11 @@ module.exports.upload_info=async (req,res)=>{
             else{
                 console.log('Record Created');
                 
-                Music.create({name:req.body.name,
+               let song=await Music.create({name:req.body.name,
                     singername:req.body.singername});
-
-                    res.redirect(`/music/uploadSong/${req.body.name}`);
+                    console.log('Song name',song._id);
+                    
+                    res.redirect(`/music/uploadSong/${song._id}`);
             }
         })
     } catch (error) {
@@ -46,8 +47,9 @@ module.exports.upload_info=async (req,res)=>{
 module.exports.upload_song=async (req,res)=>{
     try {
         console.log('Uploading song');
-    
-        let uploaded_music=await Music.findOneAndUpdate({name:req.params.name});
+        console.log(req.params.id);
+        
+        let uploaded_music=await Music.findByIdAndUpdate(req.params.id);
         console.log('Uploaded Music',uploaded_music);
         
         Music.uploadedAvatar(req,res,function(err){

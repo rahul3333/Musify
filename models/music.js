@@ -14,6 +14,10 @@ const musicSchema=new mongoose.Schema({
     },
     song:{
         type:String
+    },
+    category:{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Category'
     }
 },{
     timestamps:true
