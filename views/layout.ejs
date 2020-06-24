@@ -31,10 +31,28 @@
         <link rel="stylesheet" href="/css/home.css">
         <link rel="stylesheet" href="/css/signin.css">
         <link href="/css/sign-up.css" rel="stylesheet">
+        <link href="/css/upload.css" rel="stylesheet">
+        <link href="/css/uploadSong.css" rel="stylesheet">
     </head>
 
     <body>
-
+      <% if(path!="/signin" && path!="/signup"){%>
+        <!-- navbar -->
+<nav class="navbar navbar-default fixed-top w-70" style="position: absolute;left: 20%;"> 
+  <a href="#" class="toggle-button">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+  <div class="navbar-links">
+    <ul>
+      <li><a href="/users/signup" data-animsition-out-class="overlay-slide-right" data-animsition-out-duration="500" class="nav_sign_up animsition-link">Sign Up</a></li>
+      <li><a href="/users/signin" class="nav_sign_in animsition-link">Sign In</a></li>
+    </ul>
+  </div>
+</nav>
+        
+        <%}%>
        
        
     

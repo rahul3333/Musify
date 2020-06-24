@@ -1,4 +1,16 @@
-<form action="/music/upload_song/<%=name%>" method="POST" enctype="multipart/form-data">
-    <input type="file" name="song" id="">
-    <input type="submit" value="Upload file">
-  </form>
+<body id="upload_body">
+<div class="container1" >
+    <div class="logoandhead pt-3">
+        <img src="/images/logo.png" class="logo-form" alt="logo">
+        <h1 id="text">Upload</h1>
+    </div>
+    <form action="/music/upload_song/<%=name%>" method="POST" enctype="multipart/form-data">
+        <label for="image">
+            <input type="file" name="song" id="image" style="display:none;"/>
+            <img src="/images/plus.png" class="plus-form" alt="plus" />
+         </label><br>
+        <input type="submit" class="button-form" value="Upload here...">
+    </form>
+
+</div>
+</body>

@@ -1,19 +1,18 @@
 const Music=require('../models/music');
-const mongo = require('mongodb');
-const Grid = require('gridfs-stream');
-const db=require('../config/mongoose');
-const gfs = Grid(db, mongo);
+const Category=require('../models/category');
 
 module.exports.uploadPage=(req,res)=>{
     res.render('uploadsonginfo',{
-        title:'About Song'
+        title:'About Song',
+        path:req.route.path
     });
 }
 
 module.exports.uploadSong=(req,res)=>{
     res.render('upload_song',{
         title:'Upload Song',
-        name:req.params.name
+        name:req.params.name,
+        path:req.route.path
     });
 }
 module.exports.upload_info=async (req,res)=>{
@@ -32,7 +31,7 @@ module.exports.upload_info=async (req,res)=>{
                 
                let song=await Music.create({name:req.body.name,
                     singername:req.body.singername});
-                    console.log('Song name',song._id);
+                    console.log('Song id',song._id);
                     
                     res.redirect(`/music/uploadSong/${song._id}`);
             }
@@ -46,12 +45,11 @@ module.exports.upload_info=async (req,res)=>{
 
 module.exports.upload_song=async (req,res)=>{
     try {
-        console.log('Uploading song');
+        console.log('Uploading song id');
         console.log(req.params.id);
         
         let uploaded_music=await Music.findByIdAndUpdate(req.params.id);
         console.log('Uploaded Music',uploaded_music);
-        
         Music.uploadedAvatar(req,res,function(err){
             if(err){
                 console.log('Multer Error : ',err);
@@ -59,7 +57,6 @@ module.exports.upload_song=async (req,res)=>{
             console.log(req.file);
             
             if(req.file){
-                console.log(Music.avatarPath);
                 console.log(req.file.filename);
                 
                 uploaded_music.song=Music.avatarPath+'/'+req.file.filename;
@@ -75,12 +72,16 @@ module.exports.upload_song=async (req,res)=>{
      
 }
 
-module.exports.playsong=(req,res)=>{
-    console.log(req.params.filename);
-    const readstream = gfs.createReadStream({name: req.params.filename})
-   readstream.on('error', function (error) {
-        res.sendStatus(500)
-   })
-   res.type('audio/m4a')
-   readstream.pipe(res)
+module.exports.uploadSongAdmin=async (req,res)=>{
+    try {
+
+        let category=await Category.find({});
+        console.log(category);
+        res.redirect('back');
+        if(category){
+
+        }
+    } catch (error) {
+        
+    }
 }

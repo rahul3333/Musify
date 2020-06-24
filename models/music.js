@@ -14,10 +14,6 @@ const musicSchema=new mongoose.Schema({
     },
     song:{
         type:String
-    },
-    category:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Category'
     }
 },{
     timestamps:true
@@ -28,7 +24,8 @@ let storage = multer.diskStorage({
       cb(null, path.join(__dirname,'..',AVATAR_PATH));
     },
     filename: function (req, file, cb) {
-      cb(null, file.fieldname+'-'+Date.now())
+        
+      cb(null, file.originalname)
     }
   });
 

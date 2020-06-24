@@ -1,11 +1,18 @@
-
+<body id="upload_body">
       <div id="song_info_div" class="slide active">
         <form action="/music/upload_song_info" method="POST">
-         Name: <input type="text" name="name" id="">
-         Singer name: <input type="text" name="singername" id="">
-         <input type="submit" value="Next" id="song_info_div_submit">
+          <div class="logoandhead pt-3">
+            <img src="/images/logo.png" class="logo-form" alt="logo">
+        <h1 id="text">Upload</h1>
+        </div>
+         <h3 style="color: white; margin-left: -10vw; margin-top: 4vh;font-family: serif;"> Song Name:</h3> 
+         <input type="text" class="inp" name="name" id="">
+         <h3 style="color: white; margin-left: -9.5vw; margin-top: 4vh;font-family: serif;">Singer name:</h3> 
+         <input type="text" class="inp" name="singername" id="">
+         <input type="submit" class="button-form-2" value="Next" id="song_info_div_submit">
         </form>
       </div>
+    </body>
       
       
 

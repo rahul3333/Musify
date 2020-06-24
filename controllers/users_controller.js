@@ -1,14 +1,17 @@
 const User=require('../models/users');
 
 module.exports.signin=(req,res)=>{
+    
     res.render('signin',{
-        title:'Sign In'
+        title:'Sign In',
+        path:req.route.path
     })
 }
 
 module.exports.signup=(req,res)=>{
     res.render('sign-up',{
-        title:'Sign Up'
+        title:'Sign Up',
+        path:req.route.path
     })
 }
 
@@ -40,17 +43,22 @@ module.exports.create_user=(req,res)=>{
     })   
 }
 
-module.exports.signin_user=(req,res)=>{
+module.exports.createSession=(req,res)=>{
+    console.log('Logged in Successfully');
     User.findOne({email:req.body.email},function(err,user){
+        if(err){
+            console.log('Error in finding user in signUp');
+            return;
+        }
         if(user){
-            if(req.body.password==user.password){
-                console.log('Sign In Successful');
-                res.redirect('/');
+            if(user.password!=req.body.password){
+                console.log('here in comp pass');
             }
-            else{
-                console.log('email/password is incorrect');
-                res.redirect('back');
-            }
+            res.cookie('user_id',user.id);
+            res.redirect('/');
+        }
+        else{
+             res.redirect('/')
         }
     })
 }

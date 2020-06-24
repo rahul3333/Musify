@@ -13,11 +13,11 @@ module.exports.home_player=(req,res)=>{
             console.log('Error occurred');
             res.redirect('back');
         }
-        console.log(music);
         
         res.render('home',{
             title:'HomePage',
-            music:music
+            music:music,
+            path:req.route.path
         })
     })
 }

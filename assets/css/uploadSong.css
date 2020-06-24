@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+
+#upload_body {
+    background-image: url("../images/background-image.jpg");
+ 
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+  }
+
+  .logoandhead{
+    width: 28vw;
+    height: 10vh;
+    background-color: #4DB6AC;
+
+}
+
+#text{
+    text-align: center;
+    background: -webkit-linear-gradient( #c345c7 5%, #2d2dbd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* padding-top: 4vh; */
+    font-family: serif;
+    display: inline;
+
+}
+
+.logo-form{
+    margin-left:-4vw;
+    margin-top: -3vh;
+}
+
+.button-form-2 {
+	box-shadow: 0px 12px 28px 2px #931bc2;
+	background:linear-gradient(to bottom, #c345c7 5%, #2d2dbd 100%);
+	background-color:#c345c7;
+	border-radius:15px;
+	border:1px solid #191eab;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	padding:11px 51px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #2f6627;
+    margin-top: 3vh;
+}
+.button-form-2:hover {
+	background:linear-gradient(to bottom, #2d2dbd 5%, #c345c7 100%);
+	background-color:#2d2dbd;
+}
+.button-form-2:active {
+	position:relative;
+	top:1px;
+}
+
+#song_info_div{
+        margin: 0 auto;  
+        width: 25vw;
+        height: 60vh;
+        margin-top: 20vh;
+        background: rgba(256, 256, 256, 0.2);
+        overflow: hidden;
+        text-align: center;
+        border: 4px solid transparent;
+        border-image: linear-gradient(to bottom, #c345c7 5%, #2d2dbd 100%);
+        border-image-slice: 1;
+}
+
+#song_info_div::after{
+    border-radius: 20%;
+}
+
+.inp{
+    display: block;
+    margin-left: 2vw;
+    background: transparent;
+    border: 4px solid transparent;
+    border-radius: 10px;
+    border-image: linear-gradient(to bottom, #c345c7 5%, #2d2dbd 100%);
+    border-image-slice: 1;
+    color: white;
+    outline: none;
+}
