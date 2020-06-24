@@ -1,6 +1,7 @@
-<div class="container">
-    <form action="" method="post">
+<div class="container" style="position: absolute;top: 50%;left: 10%;">
+    <form action="/music/uploadSongInfoAdmin" method="post">
         <select name="name" id="">
+            <option value="Categories">Categories</option>
             <option value="India Top 50">India Top 50</option>
             <option value="Global Top 50">Global Top 50</option>
             <option value="Top Hits - Tamil">Top Hits - Tamil</option>
@@ -13,6 +14,9 @@
             <option value="The ALUX.COM Podcast">The ALUX.COM Podcast</option>
             <option value="Workout">Workout</option>
             <option value="All Out 10s">All Out 10s</option>
-        </select>
+        </select><br>
+        <input type="text" name="name" id="" placeholder="Song Name">
+        <input type="text" name="singername" id="" placeholder="Singer name">
+        <input type="submit" value="Next">
     </form>
 </div>

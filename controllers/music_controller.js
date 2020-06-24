@@ -15,6 +15,14 @@ module.exports.uploadSong=(req,res)=>{
         path:req.route.path
     });
 }
+
+module.exports.Adminupload=(req,res)=>{
+    res.render('adminupload',{
+        title:'Admin Upload',
+        path:req.route.path
+    })
+}
+
 module.exports.upload_info=async (req,res)=>{
     try {
         Music.findOne({name:req.body.name},async (error,music)=>{
@@ -75,12 +83,14 @@ module.exports.upload_song=async (req,res)=>{
 module.exports.uploadSongAdmin=async (req,res)=>{
     try {
 
-        let category=await Category.find({});
-        console.log(category);
-        res.redirect('back');
-        if(category){
+    } catch (error) {
+        
+    }
+}
 
-        }
+module.exports.uploadSongInfoAdmin=async (req,res)=>{
+    try {
+        
     } catch (error) {
         
     }
