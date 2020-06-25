@@ -3,7 +3,7 @@ const multer=require('multer');
 const path=require('path');
 const AVATAR_PATH=path.join('/uploads/admin/songs');
 const adminMusicSchema=new mongoose.Schema({
-    name:{
+    admin_music_name:{
         type:String
     },
     singername:{
@@ -12,7 +12,7 @@ const adminMusicSchema=new mongoose.Schema({
     duration:{
         type:Number
     },
-    song:{
+    adminsong:{
         type:String
     },
     category:{
@@ -37,7 +37,7 @@ let storage = multer.diskStorage({
   });
 
 //   static methods
-adminMusicSchema.statics.uploadedAvatar=multer({storage:storage}).single('song');
+adminMusicSchema.statics.uploadedAvatar=multer({storage:storage}).single('adminsong');
 adminMusicSchema.statics.avatarPath=AVATAR_PATH;
 
 

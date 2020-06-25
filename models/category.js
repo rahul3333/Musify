@@ -4,7 +4,7 @@ const path=require('path');
 const AVATAR_PATH=path.join('/uploads/category_avatar');
 
 const categorySchema=new mongoose.Schema({
-    name:{
+    category_name:{
         type:String
     },
     description:{

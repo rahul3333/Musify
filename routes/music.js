@@ -8,6 +8,7 @@ router.all('/uploadPage',music_controller.uploadPage);
 router.all('/uploadSong/:name',music_controller.uploadSong);
 router.all('/upload_song/:id',music_controller.upload_song);
 router.all('/admin/upload',music_controller.Adminupload);
+router.all('/adminsongPage/:id',music_controller.AdminSongUpload);
 router.all('/uploadSongInfoAdmin',music_controller.uploadSongInfoAdmin);
-router.all('/uploadSongAdmin/:name',music_controller.uploadSongAdmin);
+router.all('/uploadSongAdmin/:id',music_controller.uploadSongAdmin);
 module.exports=router;

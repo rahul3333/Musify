@@ -1,5 +1,6 @@
 const Music=require('../models/music');
 const Category=require('../models/category');
+const adminMusic=require('../models/music_admin');
 
 module.exports.uploadPage=(req,res)=>{
     res.render('uploadsonginfo',{
@@ -20,6 +21,14 @@ module.exports.Adminupload=(req,res)=>{
     res.render('adminupload',{
         title:'Admin Upload',
         path:req.route.path
+    })
+}
+
+module.exports.AdminSongUpload=(req,res)=>{
+    res.render('adminuploadsong',{
+        title:'Upload Song',
+        path:req.route.path,
+        id:req.params.id
     })
 }
 
@@ -82,16 +91,39 @@ module.exports.upload_song=async (req,res)=>{
 
 module.exports.uploadSongAdmin=async (req,res)=>{
     try {
-
-    } catch (error) {
+        let music=await adminMusic.findByIdAndUpdate(req.params.id);
+        adminMusic.uploadedAvatar(req,res,function(err){
+            if(err){
+                console.log('Error occured while uploading music through admin');
+                res.redirect('back');
+            }
+            if(req.file){
+                music.adminsong=adminMusic.avatarPath+'/'+req.file.filename;
+            }
+            music.save();
+        })
+        const uploading_category=await Category.findByIdAndUpdate(music.category);
         
+        uploading_category.adminmusic.push(music.id);
+        uploading_category.save();
+        res.redirect('back');
+    } catch (error) {
+        console.log(error);
+        res.redirect('back')
     }
 }
 
 module.exports.uploadSongInfoAdmin=async (req,res)=>{
     try {
-        
+
+        let cat=await Category.findOne({category_name:req.body.category_name});
+
+        let upload=await adminMusic.create({admin_music_name:req.body.admin_music_name,
+                                            singername:req.body.singername,
+                                            category:cat.id})   
+        res.redirect(`/music/adminsongPage/${upload.id}`);    
     } catch (error) {
-        
+        console.log(error);
+        res.redirect('back')
     }
 }

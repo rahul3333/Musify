@@ -203,7 +203,7 @@
     width: 20%;
     height: 100%;
     background: #151719;
-    left: -200px;
+    /* left: -200px; */
     transition: all 500ms linear;
    }
   
@@ -241,13 +241,19 @@
     position: fixed;
   }
   
+.sidebar_ul{
+    list-style: none;
+    position: fixed;
+    top: 20%;
+} 
+
   .sidebar_ul li a .fas{
     width: 25px;
   }
   
   .sidebar_ul li:hover{
     background-color: #2AA33D;
-    width: 100%;
+    width: 155%;
   }
   
   .sidebar_ul li a{

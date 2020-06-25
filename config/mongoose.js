@@ -1,5 +1,5 @@
 const mongoose=require('mongoose');
-mongoose.connect('mongodb://localhost/Musify',{useUnifiedTopology: true,useNewUrlParser: true });
+mongoose.connect('mongodb://localhost/Musify',{useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify:false });
 
 const db=mongoose.connection;
 
