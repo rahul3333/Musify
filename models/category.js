@@ -10,9 +10,6 @@ const categorySchema=new mongoose.Schema({
     description:{
         type:String
     },
-    avatar:{
-        type:String
-    },
     adminmusic:[
         {
         type:mongoose.Schema.Types.ObjectId,

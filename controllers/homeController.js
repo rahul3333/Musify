@@ -7,17 +7,18 @@ const Music=require('../models/music');
 // }
 
 module.exports.home_player=(req,res)=>{
-    
+    let record=null;
     Music.find({},(err,music)=>{
         if(err){
             console.log('Error occurred');
             res.redirect('back');
         }
         
-        res.render('home',{
-            title:'HomePage',
+        res.render('landing',{
+            title:'Musify',
             music:music,
-            path:req.route.path
+            path:req.route.path,
+            record:record
         })
     })
 }

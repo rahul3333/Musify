@@ -3,33 +3,100 @@ const Category=require('../models/category');
 const adminMusic=require('../models/music_admin');
 
 module.exports.uploadPage=(req,res)=>{
+    var music=null;
+    var record=null;
     res.render('uploadsonginfo',{
         title:'About Song',
-        path:req.route.path
+        path:req.route.path,
+        music:music,
+        record:record
+    });
+}
+
+module.exports.categories_list=(req,res)=>{
+    var music=null;
+    var record=null;
+    res.render('home',{
+        title:'Top Categories',
+        path:req.route.path,
+        music:music,
+        record:record
     });
 }
 
 module.exports.uploadSong=(req,res)=>{
+    var music=null;
+    var record=null;
     res.render('upload_song',{
         title:'Upload Song',
         name:req.params.name,
-        path:req.route.path
+        path:req.route.path,
+        music:music,
+        record:record
     });
 }
 
 module.exports.Adminupload=(req,res)=>{
+    var music=null;
+    var record=null;
     res.render('adminupload',{
         title:'Admin Upload',
-        path:req.route.path
+        path:req.route.path,
+        music:music,
+        record:record
     })
 }
 
 module.exports.AdminSongUpload=(req,res)=>{
+    var music=null;
+    var record=null;
     res.render('adminuploadsong',{
         title:'Upload Song',
         path:req.route.path,
-        id:req.params.id
+        id:req.params.id,
+        music:music,
+        record:record
     })
+}
+
+module.exports.addCategory=(req,res)=>{
+    var music=null;
+    var record=null;
+    res.render('addcategory',{
+        title:'Add Category',
+        path:req.route.path,
+        music:music,
+        record:record
+    })
+}
+
+module.exports.addCategoryImage=(req,res)=>{
+    var music=null;
+    var record=null;
+    res.render('addcategoryimage',{
+        title:'Upload Image',
+        path:req.route.path,
+        id:req.params.id,
+        music:music,
+        record:record
+    })
+}
+
+module.exports.playlistPage=(req,res)=>{
+
+    Category.findOne({category_name:req.params.name},function(err,record){
+        console.log('id:',record.id);
+        
+        adminMusic.find({category:record.id},function(err,music){
+            res.render('songsPage',{
+                title:`Musify-${req.params.name}`,
+                path:req.route.path,
+                name:req.params.name,
+                record:record,
+                music:music
+            })
+        });
+    });
 }
 
 module.exports.upload_info=async (req,res)=>{
@@ -94,8 +161,7 @@ module.exports.uploadSongAdmin=async (req,res)=>{
         let music=await adminMusic.findByIdAndUpdate(req.params.id);
         adminMusic.uploadedAvatar(req,res,function(err){
             if(err){
-                console.log('Error occured while uploading music through admin');
-                res.redirect('back');
+                console.log('Error occured while uploading music through admin',err);
             }
             if(req.file){
                 music.adminsong=adminMusic.avatarPath+'/'+req.file.filename;
@@ -106,7 +172,7 @@ module.exports.uploadSongAdmin=async (req,res)=>{
         
         uploading_category.adminmusic.push(music.id);
         uploading_category.save();
-        res.redirect('back');
+        res.redirect('/music/admin/upload');
     } catch (error) {
         console.log(error);
         res.redirect('back')
@@ -126,4 +192,44 @@ module.exports.uploadSongInfoAdmin=async (req,res)=>{
         console.log(error);
         res.redirect('back')
     }
+}
+
+module.exports.createCategory=async (req,res)=>{;
+    console.log(req.body.category_name);
+        const find_cat=await Category.findOne({category_name:req.body.category_name});
+        if(find_cat){
+            console.log('category found');
+            res.redirect(`/music/addcategoryimagePage/${req.body.category_name}`);
+        }
+        else{
+            const create=await Category.create({category_name:req.body.category_name,description:req.body.description});
+            console.log('category created : ',create.id);
+            res.redirect(`/music/addcategoryimagePage/${create.id}`);            
+        }
+}
+
+module.exports.categoryImage=async (req,res)=>{
+    try {
+        let created_category=await Category.findByIdAndUpdate(req.params.id);
+    if(created_category){
+        console.log('category found in uploading function');
+        Category.uploadedAvatar(req,res,function(err){
+            if(err){
+                console.log('Error occured while uploading category image through admin',err);
+            }
+            if(req.file){
+                console.log('image added');
+                created_category.image=Category.avatarPath+'/'+req.file.filename;
+            }
+            created_category.save();
+        })
+    }
+    else{
+        console.log('Failed to upload the category image');
+    }
+    } catch (error) {
+        console.log('error category image: ',error);
+        
+    }
+    res.redirect('/music//addcategoryPage');
 }

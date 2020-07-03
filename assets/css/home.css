@@ -13,10 +13,11 @@
     padding-top: 5rem;
     left: 20%;
     top: -2%;
-    height: 82%;
+    height: 110vh;
     width: 80%;
     overflow:auto;
     z-index: 4;
+    /* border-bottom: 0.2px solid rgb(61, 61, 61); */
 }
 
 
@@ -416,19 +417,10 @@ body {
   .audio{
       position: absolute;
       display: table;
-    top: 80.5%;
+    top: 84.5%;
     width: 100%;
-    height: 7.6rem;
+    height: 6rem;
     background: #282828;
-  }
-
-
-  .audio_bar{
-      background-color: #282828;
-      width: 60%;
-      height: 100%;
-      margin-left: 18rem;
-      margin-top: -4rem;
   }
 
   .audio_image{
@@ -496,12 +488,21 @@ body {
 
 #progress{
     position: absolute;
-    top: 65%;
-    left: 32%;
-    width: 40%;
+    top: 73%;
+    left: 34%;
+    width: 35%;
     height: 0.25rem;
     background-color:#444444;
     border-radius: 1em 1em 1em 1em;
+}
+
+#progress_bar::-webkit-progress-bar {
+    border-radius: 5px;
+}
+
+#progress_bar::-webkit-progress-value {
+    border-radius: 5px;
+    background-color: #6f2591;
 }
 
 #go_progress{
@@ -533,4 +534,51 @@ body {
 
 .song_form{
     display: none;
+}
+
+#duration{
+    position: absolute;
+    top: 65.4%;
+    left: 70.2%;
+    font-size: 0.9vw;
+    font-family:poppins;
+    letter-spacing: 0.15em;
+    color: #A09F9F;
+    display: inline;
+}
+
+.custom_volume{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+     appearance: none;
+ 
+    /* Outer bar */
+    border: none;
+    border-radius: 5px;
+    height: 0.7vh;
+    display: flex;
+}
+
+.volume_progress{
+    display: flex;
+    flex-direction: row;
+    float: right;
+    margin-top: -3%;
+    margin-left: -3vw;
+}
+
+.custom_volume::-webkit-progress-bar {
+    border-radius: 5px;
+    background-color: rgb(78, 78, 78);
+    width: 6vw;
+}
+.custom_volume::-webkit-progress-value {
+    border-radius: 5px;
+    background-color: rgb(185, 185, 185);
+}
+
+.vol_icon{
+    position: absolute;
+    margin-top: -0.6%;
+    margin-left: -1.7%;
 }

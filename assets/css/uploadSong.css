@@ -85,3 +85,7 @@
     color: white;
     outline: none;
 }
+
+.inp option{
+    color: black;
+}

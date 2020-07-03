@@ -1,6 +1,11 @@
-<div class="container" style="position: absolute;top: 50%;left: 10%;">
+<body id="upload_body">
+<div class="container1" >
+    <div class="logoandhead pt-3">
+        <img src="/images/logo.png" class="logo-form" alt="logo">
+        <h1 id="text">Upload</h1>
+    </div>
     <form action="/music/uploadSongInfoAdmin" method="post">
-        <select name="category_name" id="">
+        <select name="category_name" class="inp"  style="width: 15vw; margin-top: 2vh;color: white; ">
             <option value="Categories">Categories</option>
             <option value="India Top 50">India Top 50</option>
             <option value="Global Top 50">Global Top 50</option>
@@ -15,8 +20,10 @@
             <option value="Workout">Workout</option>
             <option value="All Out 10s">All Out 10s</option>
         </select><br>
-        <input type="text" name="admin_music_name" id="" placeholder="Song Name">
-        <input type="text" name="singername" id="" placeholder="Singer name">
-        <input type="submit" value="Next">
+        <h3 style="color: white; margin-left: -10vw; margin-top: -2vh;font-family: serif;">Song Name:</h3>
+        <input type="text" name="admin_music_name" class="inp" required>
+        <h3 style="color: white; margin-left: -9vw; margin-top: 2vh;font-family: serif;">Singer Name:</h3>
+        <input type="text" name="singername" class="inp" required>
+        <input type="submit" class="button-form-2" value="Next">
     </form>
 </div>

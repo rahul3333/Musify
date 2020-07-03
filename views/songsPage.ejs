@@ -1,0 +1,28 @@
+<body style="background:linear-gradient(to bottom, rgb(63, 63, 63),rgb(54, 54, 54),rgb(56, 55, 55),rgb(53, 53, 53),rgb(24,21,22),rgb(18,18,18));">
+<div id="songPage_maindiv">
+    <div class="w-75 h-50 container p-0 m-0 playlist_header_div" id="playlist_top_div">
+    <img src="<%=record.image%>" class="h-75 pt-3 pl-4 mt-5 playlist_image" alt="">
+    <div class="playlist_info_div pt-5 pl-4 mt-5">
+        <p class="playlist_word">PLAYLIST</p>
+        <h1 class="playlist_header" id="response"><%=record.category_name%></h1>
+        <p class="playlist_description"><%=record.description%></p>
+    </div>
+</div>
+<div class="container p-4 ml-2 playlist_songs_div">
+    <%let song=music[0].adminsong%>
+    <button id="btn" class="playlist_play_button" onclick="playMusicFromPlaylist()">
+        <div class="playlist_triangle"></div>
+    </button>    
+    <i class="fa fa-lg fa-heart playlist_heart pt-3" aria-hidden="true"></i>
+</div>
+<ul class="playlist_song_list pl-4 pt-2">
+    <%for(r of music){%>
+    <li class="list_song" id="<%=r.adminsong%>" onclick="play_song_list(this.id)">
+        <img src="/images/music_note.png" class="music_note" alt="">
+        <p class="song_name"><%=r.admin_music_name%></p>
+        <p class="singer_name"><%=r.singername%></p>
+    </li>
+    <%}%>
+</ul>
+</div>
+</body>

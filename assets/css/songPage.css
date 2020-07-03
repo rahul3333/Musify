@@ -1,0 +1,118 @@
+#songPage_maindiv::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+  #songPage_maindiv::-webkit-scrollbar-thumb {
+    background-color: #909090;
+    outline: 1px solid #909090;
+  }
+#songPage_maindiv{
+    overflow: auto;
+    height: 86.3%;
+}
+.playlist_anchor:hover{
+    cursor: pointer;    
+    text-decoration: none;
+}
+
+.playlist_header_div{
+    background: linear-gradient(to bottom, #b4b3b3,#a3a2a2,#949292,rgb(126, 128, 128),rgb(117, 115, 115),rgb(109, 106, 106),rgb(94, 91, 91),rgb(68, 66, 66));
+    display: flex;
+}
+
+.playlist_image{
+    position: relative;
+    width: 25%;
+    display: flex;
+}
+
+.playlist_info_div{
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist_word{
+    font-size: small;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    font-family: poppins;
+    margin-bottom: 0.3%;
+}
+
+.playlist_header{
+    font-family: poppins;
+    font-weight: 900;
+    font-size: 6vw;
+    white-space: pre-wrap;
+    line-height: 1.1em;
+}
+
+.playlist_description{
+    font-size: 1.2vw;
+    color: #262927;
+    font-weight: 700;
+}
+
+.playlist_songs_div{
+    display: flex;
+}
+
+.playlist_triangle{
+    border-top: 0.8vw solid transparent;
+    border-left: 1.3vw solid white;
+    border-bottom: 0.8vw solid transparent;
+    margin-left: 40%;
+}
+
+.playlist_play_button{
+    height: 9vh;
+    width: 4.2vw;
+    border-radius: 50%;
+    background: #1DB954;
+    border: 1px solid #1DB954;
+}
+
+.playlist_heart{
+    color:#383737 !important;
+    text-shadow: 0 0 4px white;
+    margin-left: 2.5vw;
+    margin-top: 0.3vw;
+}
+
+.playlist_song_list{
+    list-style: none;
+}
+
+.playlist_song_list li{
+    transition: 0.5s;
+}
+
+.playlist_song_list li:hover{
+    background: rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+.playlist_song_list li:hover .singer_name{
+    color: black;
+}
+
+.music_note{
+    height: 4vh;
+    width: 4vw;
+}
+
+.song_name{
+    text-transform: capitalize;
+    margin-left: -0.5vw;
+    margin-bottom: -0.5vw;
+    letter-spacing: 0.07em;
+}
+
+.singer_name{
+    margin-left: 3.9vw;
+    font-size: medium;
+    font-weight: 800;
+    font-family: serif;
+    color: grey;
+    text-transform: capitalize;
+}
