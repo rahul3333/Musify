@@ -289,6 +289,8 @@ body{
 .button-end:hover {
 	background:linear-gradient(to bottom, #1c733f 5%, #12b85a 100%);
 	background-color:#1c733f;
+	color: white;
+	text-decoration: none;
 }
 .button-end:active {
 	position:relative;

@@ -5,10 +5,12 @@ const AVATAR_PATH=path.join('/uploads/category_avatar');
 
 const categorySchema=new mongoose.Schema({
     category_name:{
-        type:String
+        type:String,
+        text:true
     },
     description:{
-        type:String
+        type:String,
+        text:true
     },
     adminmusic:[
         {

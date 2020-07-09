@@ -9,10 +9,6 @@ const userSchema=new mongoose.Schema({
     },
     name:{
         type:String,
-    },
-    music:{
-        type:mongoose.Schema.Types.ObjectId,
-        ref:'Music'
     }
     // likes: [
     //     {

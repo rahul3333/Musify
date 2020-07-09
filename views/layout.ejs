@@ -34,57 +34,26 @@
         <link href="/css/upload.css" rel="stylesheet">
         <link href="/css/uploadSong.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/songPage.css">
+        <link rel="stylesheet" href="/css/search_results.css">
+        <link rel="icon" type="image/png" href="/images/logo.png"/>
+        <link rel="stylesheet" href="/css/profile.css">
     </head>
 
     <body>
-      <% if(path!="/signin" && path!="/signup" && path!="/"){%>
-        <!-- navbar -->
-<nav class="navbar navbar-default fixed-top w-70" style="position: absolute;left: 20%;"> 
-  <a href="#" class="toggle-button">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </a>
-  <div class="navbar-links">
-    <ul>
-      <li><a href="/users/signup" data-animsition-out-class="overlay-slide-right" data-animsition-out-duration="500" class="nav_sign_up animsition-link">Sign Up</a></li>
-      <li><a href="/users/signin" class="nav_sign_in animsition-link">Sign In</a></li>
-    </ul>
-  </div>
-</nav>
-        
-        <%}%>
+      <!-- navbar -->
+      <% if(locals.user){ if(path!="/" ){%>
+          <%- include('loggedin_nav') %>
+          <%}%>
+        <%}else{if(path!="/" ){ if(path!="/signup" && path!="/signin"){%>
+          <%- include('loggedout_nav') %>
+          <%}%>
+          <%}%>
+          <%}%>
        
-       
-    
         <%- body %>
-        <%if(path!="/"){%>
+        <%if(locals.user && path!="/"){%>
         <%if(music){%>
-          <audio src="" id="Audio" type="audio/m4a" preload="metadata" ></audio>
-          <div class="audio p-2" id="controls">
-            <%if(record){%>
-            <div class="audio_info">
-              <img src="<%=record.image%>" alt="" class="audio_image" style="margin-top: -1%;">
-              <p class="song_name" id="audio_song_name" style="margin-left: 0.6%;top:3%;"></p> <br> <p class="singer" id="audio_singer_name" style="margin-top: -2%;color: white;"></p> 
-            </div>
-            <%}%>
-          <div class='btns'>
-            <input type="image" src="/images/playbutton.png" class="audio_play_button" id="play" alt="">
-            <img src="/images/next_img.png" class="next_icon" alt="">
-            <img src="/images/next_img.png" class="next_icon_flip" alt="">
-          </div>
-          <div id='progress'>
-            <div id="go_progress">
-              <div id="tracker"></div>
-            </div>
-            <!-- <progress id="progress_bar" value="0" max="1"></progress> -->
-          </div>
-          <p id="duration"></p>
-          <div class="volume_progress">
-            <progress class="custom_volume" id="volume" value="0.5" max="1"></progress>
-            <i class='fas fa-volume-down vol_icon' id="vol_change_icon" style="color: #A09F9F"></i>
-          </div>
-          </div>
+          <%- include('audioPlayer') %>
           <%}%>
           <%}%>
         <script>
@@ -133,9 +102,22 @@
   if(head_height>parseInt(div_height/2)){
     header.css('font-size',3+'vw');
   }
-  
-  // console.log($('.card_head').style.fontSize);
+  </script>
+
+  <script>
+            $(function () {
+      $("#songPage_maindiv").scroll(function () {
+        var $nav = $(".fixed-top");
+        $nav.toggleClass('toggle_bg_color2', $(this).scrollTop()>0);
+        $nav.css("left",0);
+        $(".search-bar").toggleClass('hide_bar',$(this).scrollTop()>0);
+    
+        // var $a=$(".acolor");
+        // $a.toggleClass('text-color',$(this).scrollTop()>5);
+      });
+    });
 </script>
+  
         <script src="/js/script.js"></script>
     </body>
 </html>

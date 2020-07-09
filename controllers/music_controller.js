@@ -6,7 +6,7 @@ module.exports.uploadPage=(req,res)=>{
     var music=null;
     var record=null;
     res.render('uploadsonginfo',{
-        title:'About Song',
+        title:'Musify - About Song',
         path:req.route.path,
         music:music,
         record:record
@@ -17,7 +17,7 @@ module.exports.categories_list=(req,res)=>{
     var music=null;
     var record=null;
     res.render('home',{
-        title:'Top Categories',
+        title:'Musify - Top Categories',
         path:req.route.path,
         music:music,
         record:record
@@ -25,10 +25,12 @@ module.exports.categories_list=(req,res)=>{
 }
 
 module.exports.uploadSong=(req,res)=>{
+    console.log('name: ',req.params.name);
+    console.log('name: ',req.params.user_id);
     var music=null;
     var record=null;
     res.render('upload_song',{
-        title:'Upload Song',
+        title:'Musify - Upload Song',
         name:req.params.name,
         path:req.route.path,
         music:music,
@@ -40,7 +42,7 @@ module.exports.Adminupload=(req,res)=>{
     var music=null;
     var record=null;
     res.render('adminupload',{
-        title:'Admin Upload',
+        title:'Musify - Admin Upload',
         path:req.route.path,
         music:music,
         record:record
@@ -51,7 +53,7 @@ module.exports.AdminSongUpload=(req,res)=>{
     var music=null;
     var record=null;
     res.render('adminuploadsong',{
-        title:'Upload Song',
+        title:'Musify - Upload Song',
         path:req.route.path,
         id:req.params.id,
         music:music,
@@ -63,7 +65,7 @@ module.exports.addCategory=(req,res)=>{
     var music=null;
     var record=null;
     res.render('addcategory',{
-        title:'Add Category',
+        title:'Musify - Add Category',
         path:req.route.path,
         music:music,
         record:record
@@ -74,7 +76,7 @@ module.exports.addCategoryImage=(req,res)=>{
     var music=null;
     var record=null;
     res.render('addcategoryimage',{
-        title:'Upload Image',
+        title:'Musify - Upload Image',
         path:req.route.path,
         id:req.params.id,
         music:music,
@@ -114,7 +116,8 @@ module.exports.upload_info=async (req,res)=>{
                 console.log('Record Created');
                 
                let song=await Music.create({name:req.body.name,
-                    singername:req.body.singername});
+                    singername:req.body.singername,
+                    user:req.params.user_id});
                     console.log('Song id',song._id);
                     
                     res.redirect(`/music/uploadSong/${song._id}`);
@@ -146,7 +149,7 @@ module.exports.upload_song=async (req,res)=>{
                 uploaded_music.song=Music.avatarPath+'/'+req.file.filename;
             }
             uploaded_music.save();
-            res.redirect('back');
+            res.redirect('/music/categories_list');
         })       
     } catch (error) {
         if(error){
@@ -231,5 +234,5 @@ module.exports.categoryImage=async (req,res)=>{
         console.log('error category image: ',error);
         
     }
-    res.redirect('/music//addcategoryPage');
+    res.redirect('/music/addcategoryPage');
 }

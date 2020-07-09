@@ -328,6 +328,16 @@ body {
 
 .fixed-top.toggle_bg_color{
     background: black!important;
+    height: 12vh;
+}
+
+.search-bar.hide_bar{
+    display: none;
+}
+
+.fixed-top.toggle_bg_color2{
+    background: grey!important;
+    height: 12vh;
 }
 
 .brand-title {
@@ -415,18 +425,17 @@ body {
 
 
   .audio{
-      position: absolute;
-      display: table;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
     top: 84.5%;
-    width: 100%;
     height: 6rem;
     background: #282828;
   }
 
   .audio_image{
-      width: 4rem;
-      height: 4rem;
-      margin-top: -1.5rem;
+      width: 4em;
+      height: 3.5em;
   }
 
   .song_name{
@@ -444,108 +453,112 @@ body {
 }
 
 .audio_info{
+    display: flex;
+    flex-direction: row;
     margin-top: 1.5rem;
     margin-left: 1rem;
 }
 
-.audio_play_button{
-    display: inline-block;
-    z-index: 5;
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    height: 2rem;
-    width: 2rem;
-    border-radius: 50%;
-    outline: none;
+.names{
+    display: inline-flex;
+    flex-direction: column;
+    line-height: 0.5em;
+    margin-right: 14vw;
+}
+#audio_song_name{
+    display: flex;
+    font-size: 1vw;
+    font-weight: bold;
+    font-family: poppins;
+    letter-spacing: 0.14em;
 }
 
-.next_icon{
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
-    left: 54%;
-    top: 27%;
+#audio_singer_name{
+    display: flex;
+    font-size: 0.9vw;
+    color: gray;
+    font-weight: bold;
+    font-family: poppins;
 }
 
-.next_icon:hover{
-    cursor: pointer;
+.player_controls{
+    display: inline-flex;
+    flex-direction: row;
+    margin-left: 10rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.player_controls i{
+    color: rgb(163, 163, 163);
+    margin-right: 2vw;
 }
 
-.next_icon_flip{
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
-    left: 47%;
-    top: 27%;
-    -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
+.player_controls i:hover{
+    color: white;
 }
 
-.next_icon_flip:hover{
-    cursor: pointer;
+#play{
+    margin-top: -0.4%;
 }
 
-#progress{
-    position: absolute;
-    top: 73%;
-    left: 34%;
-    width: 35%;
-    height: 0.25rem;
-    background-color:#444444;
-    border-radius: 1em 1em 1em 1em;
+.progress_bar {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+     appearance: none;
+    
+    flex-basis: 85%;
+    height: 0.8vh;
+    /* Outer bar */
+    border: none;
 }
 
-#progress_bar::-webkit-progress-bar {
+
+#duration{
+    display: inline-flex;
+    font-size: 0.92vw;
+    color: rgb(163, 162, 162);
+    margin-top: 1.24vw;
+    margin-left: 0.76vw;
+}
+
+.progress_bar_div{
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: row;
+}
+
+#start_time{
+    display: inline-flex;
+    font-size: 0.92vw;
+    color: rgb(163, 162, 162);
+    margin-top: 1.24vw;
+    margin-right: 0.76vw;
+}
+
+.progress_bar::-webkit-progress-bar {
     border-radius: 5px;
 }
-
-#progress_bar::-webkit-progress-value {
+ 
+/* Inner bar */
+.progress_bar::-webkit-progress-value {
     border-radius: 5px;
-    background-color: #6f2591;
+    background-color: #2AA33D;
 }
 
-#go_progress{
-    height: 0.25rem;
-    background-color: rgb(170, 165, 165);
-    width: 0%;
+.extra_controls{
+    display: flex;
+    flex-direction: row;
 }
 
-#tracker{
-    display: inline-block;
-    background-color: white;
-    margin-top: -0.2rem;
-    height: 0.8rem;
-    width: 0.8rem;
-    border-radius: 50%;
-}
-#progress:hover #go_progress{
-    background-color: green;
-}
-
-#progress:hover{
-    cursor: pointer;
-}
-.audio_play_button:hover{
-    height:2.1rem ;
-    width: 2.1rem;
-    cursor: pointer;
+.extra_controls i{
+    color: rgb(163, 163, 163);
+    margin-right: 1vw;
 }
 
 .song_form{
     display: none;
 }
 
-#duration{
-    position: absolute;
-    top: 65.4%;
-    left: 70.2%;
-    font-size: 0.9vw;
-    font-family:poppins;
-    letter-spacing: 0.15em;
-    color: #A09F9F;
-    display: inline;
-}
 
 .custom_volume{
     -webkit-appearance: none;
@@ -557,14 +570,7 @@ body {
     border-radius: 5px;
     height: 0.7vh;
     display: flex;
-}
-
-.volume_progress{
-    display: flex;
-    flex-direction: row;
-    float: right;
-    margin-top: -3%;
-    margin-left: -3vw;
+    margin-top: 0.4vw;
 }
 
 .custom_volume::-webkit-progress-bar {
@@ -577,8 +583,57 @@ body {
     background-color: rgb(185, 185, 185);
 }
 
-.vol_icon{
-    position: absolute;
-    margin-top: -0.6%;
-    margin-left: -1.7%;
+
+/* Search bar */
+
+.search-bar{
+    position: fixed;
+    top: 7%;
+    left:72%;
+    transform: translate(-50%,-60%);
+    background: #262626;
+    height: 60px;
+    padding: 10px;
+    border-radius: 40px;
+}
+.search-btn{
+    color: whitesmoke;
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin-top: -1%;
+    border-radius: 50%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 1px solid black;
+}
+.search-txt{
+    border: none;
+    outline: none;
+    background: none;
+    float: left;
+    padding: 0;
+    color: #ffffff;
+    font-size: 16px;
+    transition: 0.4s all;
+    width: 0px;
+    line-height: 40px;
+}
+.search-bar:hover > .search-txt{
+    width: 180px;
+    transition: 0 6s;
+}
+
+.verified_image{
+    height: 4vh;
+    width: 4vw;
+    margin-left: -0.7vw;
+}
+
+.verified{
+    display: flex;
+    flex-direction: row;
 }

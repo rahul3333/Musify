@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default fixed-top w-70" style="position: absolute;left: 20%;"> 
+    <a href="#" class="toggle-button">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </a>
+    <div class="navbar-links">
+      <ul>
+        <li>
+          <form class="search-bar" action="/users/search" method="post">
+          <input class="search-txt" type="text" name="search" placeholder="Search" >
+          <button class="search-btn" type="submit">
+          <i class="fas fa-search"></i>
+          </button></form></li>
+        <li><a href="/users/profile/<%=locals.user._id%>" data-animsition-out-class="overlay-slide-right" data-animsition-out-duration="500" class="nav_sign_up animsition-link"><%=locals.user.name.split(" ")[0]%></a></li>
+        <li><a href="/users/signout" class="nav_sign_in animsition-link">Sign Out</a></li>
+      </ul>
+    </div>
+  </nav>
+  

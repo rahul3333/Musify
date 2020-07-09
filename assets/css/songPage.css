@@ -1,5 +1,7 @@
 #songPage_maindiv::-webkit-scrollbar {
     width: 1em;
+    background: transparent;
+    opacity: 0;
   }
    
   #songPage_maindiv::-webkit-scrollbar-thumb {
@@ -7,8 +9,9 @@
     outline: 1px solid #909090;
   }
 #songPage_maindiv{
-    overflow: auto;
+    overflow-y: overlay;
     height: 86.3%;
+    width: 100%;
 }
 .playlist_anchor:hover{
     cursor: pointer;    
@@ -18,6 +21,7 @@
 .playlist_header_div{
     background: linear-gradient(to bottom, #b4b3b3,#a3a2a2,#949292,rgb(126, 128, 128),rgb(117, 115, 115),rgb(109, 106, 106),rgb(94, 91, 91),rgb(68, 66, 66));
     display: flex;
+    width: 100vw;
 }
 
 .playlist_image{

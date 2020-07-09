@@ -4,62 +4,21 @@ const navbarLinks = document.getElementsByClassName('navbar-links')[0]
 toggleButton.addEventListener('click', () => {
   navbarLinks.classList.toggle('active')
 })
-// function toggleSidebar(){
-//   document.getElementById("sidebar").classList.toggle('active');
-//  }
-var id;
-var width=1;
-//  $('#play').click(function(e){
-//    e.preventDefault();
-//    if(document.getElementById('play').src=='http://localhost:8000/images/playbutton.png')
-//     {
-//       document.getElementById('play').src='/images/pause.png';
-//       id=setInterval(progress,10);
-//     }
-//     else{
-//       document.getElementById('play').src='/images/playbutton.png';
-//       clearInterval(id);
-//       document.getElementById('go_progress').style.width=width + "%";
-//       document.getElementById('tracker').style.marginLeft=width + "%";
-//     }
-//  })
-
-//  function progress(){
-//    var tracker=document.getElementById('tracker');
-//    var element=document.getElementById('go_progress');
-//   if(width>=100){
-//     clearInterval(id);
-//     element.style.width=0;
-//     width=0;
-//     document.getElementById('play').src='/images/playbutton.png';
-//   }else{
-//     width++;
-    
-//     tracker.style.marginLeft=width + "%";
-//     element.style.width = width + "%";
-//   }
-//  }
-
-//  function playMusicFromPlaylist(){
-   
-//   var audio=document.getElementById("Audio");
-//   audio.play();
-//  }
 
 
 const player=document.getElementById('Audio');
-// var progress=$("#progress_bar");
+var progress=$(".progress_bar")[0];
 
 $("#vol_change_icon").on("click",function(){
   if(player.volume>0){
     $("#vol_change_icon").removeClass();
-    $("#vol_change_icon").addClass("fas fa-volume-mute vol_icon");
+    $("#vol_change_icon").addClass("fas fa-sm fa-volume-mute");
     player.volume=0;
     $("#volume").attr("value",0);
   }
   else{
     $("#vol_change_icon").removeClass();
-    $("#vol_change_icon").addClass("fas fa-volume-down vol_icon");
+    $("#vol_change_icon").addClass("fas fa-sm fa-volume-down");
     player.volume=0.5;
     $("#volume").attr("value",0.5);
   }
@@ -68,38 +27,41 @@ $("#vol_change_icon").on("click",function(){
 $("#volume").on("click",function(event){
   var volume=$("#volume");
   var icon=$('#vol_change_icon');
-  var xPosition = event.pageX - this.offsetLeft,
-        clickedValue = xPosition * this.max / this.offsetWidth;
+  var test=document.getElementById("extra_controls_div");
+  var test2=document.getElementById("volume");
   
+  var xPosition = (event.pageX - test.offsetLeft-test2.offsetLeft);
+        clickedValue = xPosition * this.max / this.offsetWidth;
+        console.log('Value : ',clickedValue);
         clickedValue = (clickedValue > 1) ? 1 : clickedValue;
         clickedValue = (clickedValue < 0) ? 0 : clickedValue;
         if(clickedValue==0){
           icon.removeClass();
-          icon.addClass("fas fa-volume-mute vol_icon")
+          icon.addClass("fas fa-sm fa-volume-mute")
         }
         else if(clickedValue>0.6){
           icon.removeClass();
-          icon.addClass("fas fa-volume-up vol_icon");
+          icon.addClass("fas fa-sm fa-volume-up");
         }
         else{
           icon.removeClass();
-          icon.addClass("fas fa-volume-down vol_icon");
+          icon.addClass("fas fa-sm fa-volume-down");
         }
         volume[0].value = clickedValue;
         player.volume = clickedValue;
 })
 
 $("#play").on("click", function playit(){ 
-
+    var element=$("#play");
     if(!(player.paused)){
-      document.getElementById('play').src='/images/playbutton.png';
+      element.removeClass();
+      element.addClass("far fa-lg fa-play-circle");
       player.pause();
-       var clear=setInterval(updateProgressBar,10);
     }
     else {
-      document.getElementById('play').src='/images/pause.png';
+      element.removeClass();
+      element.addClass("far fa-lg fa-pause-circle");
       player.play();
-      clearInterval(clear);
     }
 });
 
@@ -116,22 +78,76 @@ $("#Audio").on("loadeddata",function(){
     seconds='00';
   }
 document.getElementById("duration").innerHTML=minutes+':'+seconds;
+
+var interval=setInterval(updateProgressBar,1000);
 })
 
 function play_song_list(element_id){
-  player.src=element_id;
+  console.log("Element id : ",element_id);
   
+  player.src=element_id;
   player.play();
-  document.getElementById('play').src='/images/pause.png';
+  $("#play").removeClass().addClass("far fa-lg fa-pause-circle");
   document.getElementById("audio_song_name").innerHTML=document.getElementById(element_id).getElementsByTagName('p')[0].innerHTML;
   document.getElementById("audio_singer_name").innerHTML=document.getElementById(element_id).getElementsByTagName('p')[1].innerHTML;
 }
 
-// function updateProgressBar(){
-//   var progress_percentage=player.currentTime/player.duration;
-//   console.log(progress_percentage);
+function updateProgressBar(){
+  var progress_percentage=player.currentTime/player.duration;
+  progress.value=progress_percentage;
+}
+
+$("#prog_bar").on("click",function(event){
+  var test=document.getElementById("player_controls_div");
+  var test2=document.getElementById("prog_bar");
+  var xpos=event.pageX-test.offsetLeft-test2.offsetLeft;
+  var clickedValue = xpos * this.max / this.offsetWidth
+  console.log("x : ",clickedValue);
+  progress.value=(clickedValue);
+  var percentage=Math.round(clickedValue*100);
+  player.currentTime=Math.round(parseFloat(percentage/100)*player.duration);
+  console.log("Time : ",player.currentTime)
+})
+
+function play_search_result(element){
+  player.src=element;
+  player.play();
+}
+
+function calculateCurrentValue(currentTime) {
+  var current_hour = parseInt(currentTime / 3600) % 24,
+    current_minute = parseInt(currentTime / 60) % 60,
+    current_seconds_long = currentTime % 60,
+    current_seconds = current_seconds_long.toFixed(),
+    current_time = (current_minute < 10 ? "0" + current_minute : current_minute) + ":" + (current_seconds < 10 ? "0" + current_seconds : current_seconds);
+
+  return current_time;
+}
+
+function initProgressBar() {
+  var player = document.getElementById('Audio');
+  var length = player.duration
+  var current_time = player.currentTime;
+  var currentTime = calculateCurrentValue(current_time);
+  $("#start_time").html(currentTime);
+  if (player.currentTime == player.duration) {
+    $("#play").removeClass().addClass("far fa-lg fa-play-circle")
+  }
+}
+
+var input = document.getElementById( 'file-upload' );
+var infoArea = document.getElementById( 'file-upload-filename' );
+
+input.addEventListener( 'change', showFileName );
+
+function showFileName( event ) {
   
-//   progress.value=progress_percentage;
-// }
-
-
+  // the change event gives us the input it occurred in 
+  var input = event.srcElement;
+  
+  // the input has an array of files in the `files` property, each one has a name that you can use. We're just using the name here.
+  var fileName = input.files[0].name;
+  
+  // use fileName however fits your app best, i.e. add it into a div
+  infoArea.textContent =fileName;
+}

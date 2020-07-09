@@ -1,0 +1,50 @@
+.profile_playlist_song_list{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.profile_playlist_song_list li{
+    display: flex;
+    flex-direction: row;
+    transition: 0.4s;
+    margin-bottom: 1.5vh;
+}
+
+.list_para{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3vw;
+}
+
+.profile_playlist_song_list li:hover{
+    background: rgb(100, 100, 100);
+    cursor: pointer;
+}
+
+.profile_playlist_song_list li:hover .profile_singer_name{
+    color: black;
+}
+
+.profile_song_name{
+    text-transform: capitalize;
+    margin-left: -0.5vw;
+    letter-spacing: 0.07em;
+    font-family: poppins;
+    font-weight: 500;
+    font-size: large;
+}
+
+.profile_singer_name{
+    margin-bottom: 1vw;
+    font-size: medium;
+    font-weight: 800;
+    font-family: serif;
+    color: grey;
+    text-transform: capitalize;
+}
+
+.upload_head{
+    font-family: poppins;
+    font-weight: 900;
+}

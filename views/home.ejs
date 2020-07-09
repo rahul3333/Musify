@@ -5,7 +5,7 @@
 <div id="sidebar">
     <div>
         <img src="/images/logo.png">
-        <p style="color: white;display: inline;font-size: 1.5rem;">Musify</p>
+        <p style="color: white;display: inline;font-size: 1.5rem;margin-left: 0.5vw;">Musify</p>
       </div>
     <!-- <div class="toggle-btn"><a>
      <span></span>
@@ -14,11 +14,11 @@
     </a> -->
     </div>
     <ul class="sidebar_ul">
-      <li><a href="#"><i class="fas fa-home"></i>Home</a></li>
+      <li><a href="/music/categories_list"><i class="fas fa-home"></i>Home</a></li>
       <li><a href="#"><i class="fas fa-music"></i>Library</a></li>
       <li><a href="#">Playlists</a></li>
-      <li><a href="#"><i class="fas fa-list-ul"></i>Upload Songs</a></li>
-      <li><a href="#"><i class="fas fa-heart"></i>My Songs</a></li>
+      <li><a href="/music/uploadPage"><i class="fas fa-list-ul"></i>Upload Songs</a></li>
+      <li><a href="/users/profile/<%=locals.user._id%>"><i class="fas fa-heart"></i>My Songs</a></li>
     </ul>
   
    </div>

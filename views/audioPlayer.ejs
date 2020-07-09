@@ -1,0 +1,56 @@
+<audio src="" id="Audio" type="audio/m4a" preload="metadata" ontimeupdate="initProgressBar()"></audio>
+<div class="w-100 container-fluid m-0 p-0 audio" id="controls">
+    <%if(record && !(Array.isArray(record))){%>
+    <div class="audio_info p-2 m-2">
+        <img src="<%=record.image%>" alt="" class="audio_image">
+        <div class="names p-3 col-5">
+            <p id="audio_song_name"></p> 
+            <p id="audio_singer_name" ></p>     
+        </div>
+        </div>
+        <div class="player_controls col-5 p-3 m-2" id="player_controls_div">
+            <i class="fas fa-xs fa-random shuffle"></i>
+            <i class="fas fa-xs fa-step-backward back_song"></i>
+            <i class="far fa-lg fa-play-circle" id="play" ></i>
+            <i class="fas fa-xs fa-step-forward next_song"></i>
+            <i class="fas fa-xs fa-redo"></i>
+                <div class="progress_bar_div">
+                    <span id="start_time">00:00</span><progress class="progress_bar mt-4" id="prog_bar" value="0" max="1"></progress><span id="duration"></span>
+                </div>
+        </div>
+        <div class="extra_controls col-2 p-3 m-3 ml-5 mt-4 pl-5" id="extra_controls_div">
+            <i class="fas fa-xs fa-server mr-4"></i>
+            <i class="fas fa-xs fa-desktop mr-4"></i>
+            <i class='fas fa-sm fa-volume-down' id="vol_change_icon"></i>
+            <progress class="custom_volume" id="volume" value="0.5" max="1"></progress>
+        </div>
+        <%}else if(Array.isArray(record)){%>    
+            <div class="audio_info p-2 m-2">
+                <%if(path!='/profile/:id'){%>
+                    <img src="<%=record[0].image%>" alt="" class="audio_image">
+                <%}else{%>
+                    <img src="/images/record.jpg" style="border-radius: 5%;" alt="" class="audio_image">
+                    <%}%>
+            <div class="names p-3 col-5">
+                <p id="audio_song_name"></p> 
+                <p id="audio_singer_name" ></p>     
+            </div>
+            </div>
+            <div class="player_controls col-5 p-3 m-2" id="player_controls_div">
+                <i class="fas fa-xs fa-random shuffle"></i>
+                <i class="fas fa-xs fa-step-backward back_song"></i>
+                <i class="far fa-lg fa-play-circle" id="play" ></i>
+                <i class="fas fa-xs fa-step-forward next_song"></i>
+                <i class="fas fa-xs fa-redo"></i>
+                <div class="progress_bar_div">
+                    <span id="start_time">00:00</span><progress class="progress_bar mt-4" id="prog_bar" value="0" max="1"></progress><span id="duration"></span>
+                </div>
+            </div>
+            <div class="extra_controls col-2 p-3 m-3 ml-5 mt-4 pl-5" id="extra_controls_div">
+                <i class="fas fa-xs fa-server mr-4"></i>
+                <i class="fas fa-xs fa-desktop mr-4"></i>
+                <i class='fas fa-sm fa-volume-down' id="vol_change_icon"></i>
+                <progress class="custom_volume" id="volume" value="0.5" max="1"></progress>
+            </div>
+            <%}%>
+</div>

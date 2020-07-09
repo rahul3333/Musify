@@ -1,14 +1,14 @@
-<body style="background:linear-gradient(to bottom, rgb(63, 63, 63),rgb(54, 54, 54),rgb(56, 55, 55),rgb(53, 53, 53),rgb(24,21,22),rgb(18,18,18));">
-<div id="songPage_maindiv">
-    <div class="w-75 h-50 container p-0 m-0 playlist_header_div" id="playlist_top_div">
-    <img src="<%=record.image%>" class="h-75 pt-3 pl-4 mt-5 playlist_image" alt="">
+<body style="background:linear-gradient(to bottom, rgb(63, 63, 63),rgb(54, 54, 54),rgb(56, 55, 55),rgb(53, 53, 53),rgb(24,21,22),rgb(18,18,18));overflow-x: hidden;">
+<div id="songPage_maindiv" class="container-fluid p-0 m-0">
+    <div class="h-50 container-fluid p-0 m-0 playlist_header_div" id="playlist_top_div">
+    <img src="<%=record.image%>" class="h-75 pl-5 pr-4 mt-5 playlist_image" alt="">
     <div class="playlist_info_div pt-5 pl-4 mt-5">
         <p class="playlist_word">PLAYLIST</p>
         <h1 class="playlist_header" id="response"><%=record.category_name%></h1>
         <p class="playlist_description"><%=record.description%></p>
     </div>
 </div>
-<div class="container p-4 ml-2 playlist_songs_div">
+<div class="container p-4 ml-2 playlist_songs_div" id="song_page_div">
     <%let song=music[0].adminsong%>
     <button id="btn" class="playlist_play_button" onclick="playMusicFromPlaylist()">
         <div class="playlist_triangle"></div>

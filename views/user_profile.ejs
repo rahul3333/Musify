@@ -1,0 +1,28 @@
+<body style="background:linear-gradient(to bottom, rgb(63, 63, 63),rgb(54, 54, 54),rgb(56, 55, 55),rgb(53, 53, 53),rgb(24,21,22),rgb(18,18,18));overflow-x: hidden;">
+    <div id="songPage_maindiv" class="container-fluid p-0 m-0">
+        <div class="h-50 container-fluid p-0 m-0 playlist_header_div" id="playlist_top_div">
+        <div class="playlist_info_div pt-5 pl-4 mt-3">
+            <a href="/music/categories_list" class="mt-n5 mb-4" style="position: fixed;z-index: 150;height: 4vh; width: 4vw;"><img src="/images/logo.png" alt=""></a>
+            <br><br><div class="verified">
+                <img src="/images/verified_icon.png" class="verified_image" alt="">
+                <p class="playlist_word" style="margin-top: 0.32vw; margin-left: -0.28vw;">Verfied User</p>
+            </div>
+            <h1 class="playlist_header" id="response" style="text-transform: capitalize;"><%=locals.user.name%></h1>
+        </div>
+    </div>
+    <div class="container p-4 ml-2 playlist_songs_div" id="song_page_div">
+        <h1 class="upload_head">Your Uploads!!</h1>
+    </div>
+    <ul class="profile_playlist_song_list pl-4 pt-2">
+        <%for(r of record){%>
+        <li class="profile_list_song" id="<%=r.song%>" onclick="play_song_list(this.id)">
+            <img src="/images/music_note.png" class="music_note" alt="">
+            <div class="list_para">
+                <p class="profile_song_name"><%=r.name%></p>
+                <p class="profile_singer_name"><%=r.singername%></p>
+            </div>
+        </li>
+        <%}%>
+    </ul>
+    </div>
+    </body>

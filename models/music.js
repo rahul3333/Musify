@@ -9,12 +9,18 @@ const musicSchema=new mongoose.Schema({
     singername:{
         type:String
     },
+
     duration:{
         type:Number
     },
     song:{
         type:String
-    }
+    },
+    user:
+        {
+         type:mongoose.Schema.Types.ObjectId,
+         ref:'User'
+        }
 },{
     timestamps:true
 })

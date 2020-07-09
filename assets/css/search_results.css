@@ -1,0 +1,20 @@
+#main_div_search_page::-webkit-scrollbar {
+    width: 1em;
+  }
+   
+  #main_div_search_page::-webkit-scrollbar-thumb {
+    background-color: #909090;
+    outline: 1px solid #909090;
+  }
+
+#main_div_search_page{
+    background: #121212;
+    position: absolute;
+    padding-top: 5rem;
+    left: 20%;
+    top: -2%;
+    height: 86.5vh;
+    width: 80%;
+    overflow:auto;
+    z-index: 4;
+}

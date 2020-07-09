@@ -1,0 +1,49 @@
+<body style="overflow-y: hidden;">
+    <div class="external m-0 p-0 h-100" style="background-color: black;">
+    <div id="sidebar">
+        <div>
+            <img src="/images/logo.png">
+            <p style="color: white;display: inline;font-size: 1.5rem;">Musify</p>
+          </div>
+        <!-- <div class="toggle-btn"><a>
+         <span></span>
+         <span></span>
+         <span></span>
+        </a> -->
+        </div>
+        <ul class="sidebar_ul">
+          <li><a href="/music/categories_list"><i class="fas fa-home"></i>Home</a></li>
+          <li><a href="#"><i class="fas fa-music"></i>Library</a></li>
+          <li><a href="#">Playlists</a></li>
+          <li><a href="/music/uploadPage"><i class="fas fa-list-ul"></i>Upload Songs</a></li>
+          <li><a href="#"><i class="fas fa-heart"></i>My Songs</a></li>
+        </ul>
+      
+       </div>
+    
+    <div class="container p-5" id="main_div_search_page">
+        <section id="search_result" class="ml-n3 mt-4 mb-3">
+            <h4 class="section_head">Results for : <%=query%></h4>
+            <div class="row row-cols-1 row-cols-md-5">
+                <%for(r of record){ for(m of music){ for(n of m){%>
+             <a id="<%=n.adminsong%>" onclick="play_song_list(this.id)" class="playlist_anchor">
+                <div class="col mb-2 mt-4">
+                    <div class="card card_color">
+                        <div class="view overlay p-3">
+                            <img class="card-img-top card-image playlist_anchor" src="<%=r.image%>" alt="Arijit Singh">
+                        </div>
+                        
+                        <button id="btn_chart" class="play_button" ></button>
+                        <div id="triangle"></div>
+                        <div class="card-body">
+                            <h4 class="card-title card-head"><%=n.admin_music_name%></h4>
+                            <p class="card-text card-para"><%=n.singername%></p>
+                        </div>
+                    </div>
+                </div>
+            </a><%}%><%}%><%}%>
+        </div>
+    </section>
+    </div>
+</body>
+    

@@ -4,10 +4,12 @@ const path=require('path');
 const AVATAR_PATH=path.join('/uploads/admin/songs');
 const adminMusicSchema=new mongoose.Schema({
     admin_music_name:{
-        type:String
+        type:String,
+        text:true
     },
     singername:{
-        type:String
+        type:String,
+        text:true
     },
     duration:{
         type:Number

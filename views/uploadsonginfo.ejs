@@ -1,6 +1,6 @@
 <body id="upload_body">
       <div id="song_info_div" class="slide active">
-        <form action="/music/upload_song_info" method="POST">
+        <form action="/music/upload_song_info/<%=locals.user._id%>" method="POST">
           <div class="logoandhead pt-3">
             <img src="/images/logo.png" class="logo-form" alt="logo">
         <h1 id="text">Upload</h1>

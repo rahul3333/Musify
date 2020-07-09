@@ -8,6 +8,9 @@ const app=express();
 const db=require('./config/mongoose');
 const bodyParser=require('body-parser');
 const Grid = require('gridfs-stream');
+const passport= require('passport');
+const passportLocal=require('./config/passport-local-strategy');
+const passportGoogle=require('./config/passport-google-oauth2-strategy');
 const layouts=require('express-ejs-layouts');
 const MongoStore=require('connect-mongo')(session);
 
@@ -41,6 +44,11 @@ app.use(session({
     }
     )
 }));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(passport.setAuthenticatedUser)
 
 app.use('/',require('./routes'))
 
