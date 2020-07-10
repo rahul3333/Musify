@@ -85,9 +85,8 @@ module.exports.addCategoryImage=(req,res)=>{
 }
 
 module.exports.playlistPage=(req,res)=>{
-
+    
     Category.findOne({category_name:req.params.name},function(err,record){
-        console.log('id:',record.id);
         
         adminMusic.find({category:record.id},function(err,music){
             res.render('songsPage',{
