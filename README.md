@@ -26,6 +26,7 @@
   Import some of the data in the csv files present in data folder.  
   All the categories are not working only some are accessible.  
   User can also add new categories from the admin route  : /music/admin/upload.  
+  User should add his/her google credentials and set the callback url before using google authentication.  
     
    ## Screenshots  
    ![](images/homepage.PNG)  
