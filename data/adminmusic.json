@@ -1,0 +1,154 @@
+[{
+  "_id": {
+    "$oid": "5efbb89104d5c823f82aef39"
+  },
+  "admin_music_name": "Namo Namo",
+  "singername": "Amit Trivedi",
+  "category": {
+    "$oid": "5efb169aab4ae43784642752"
+  },
+  "createdAt": {
+    "$date": "2020-06-30T22:11:29.833Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-30T22:11:53.276Z"
+  },
+  "__v": 0,
+  "adminsong": "\\uploads\\admin\\songs/01 - Namo Namo - DownloadMing.SE.mp3"
+},{
+  "_id": {
+    "$oid": "5efbbb89939b2850b43e461f"
+  },
+  "admin_music_name": "Blinding Lights",
+  "singername": "The Weekend",
+  "category": {
+    "$oid": "5efbbb4c939b2850b43e461e"
+  },
+  "createdAt": {
+    "$date": "2020-06-30T22:24:09.951Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-30T22:24:41.331Z"
+  },
+  "__v": 0,
+  "adminsong": "\\uploads\\admin\\songs/Blinding Lights.m4a"
+},{
+  "_id": {
+    "$oid": "5efbbc76939b2850b43e4620"
+  },
+  "admin_music_name": "Chill Bro",
+  "singername": "Anirudh Ravichander",
+  "category": {
+    "$oid": "5efb176c1d9ebb31ecb839a4"
+  },
+  "createdAt": {
+    "$date": "2020-06-30T22:28:06.832Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-30T22:28:20.213Z"
+  },
+  "__v": 0,
+  "adminsong": "\\uploads\\admin\\songs/Chill Bro.m4a"
+},{
+  "_id": {
+    "$oid": "5efbbcbd939b2850b43e4621"
+  },
+  "admin_music_name": "Buttabomma",
+  "singername": "Armaan Malik",
+  "category": {
+    "$oid": "5efb18f21d9ebb31ecb839a5"
+  },
+  "createdAt": {
+    "$date": "2020-06-30T22:29:17.473Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-30T22:29:27.506Z"
+  },
+  "__v": 0,
+  "adminsong": "\\uploads\\admin\\songs/Buttabomma.m4a"
+},{
+  "_id": {
+    "$oid": "5efbdefe450e0f0f8c58e05d"
+  },
+  "admin_music_name": "Old Skool",
+  "singername": "Moosewala",
+  "category": {
+    "$oid": "5efb1a181d9ebb31ecb839a6"
+  },
+  "createdAt": {
+    "$date": "2020-07-01T00:55:26.562Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-01T00:55:32.909Z"
+  },
+  "__v": 0,
+  "adminsong": "\\uploads\\admin\\songs/OLD SKOOL.m4a"
+},{
+  "_id": {
+    "$oid": "5efdd339785bc76488956f8d"
+  },
+  "admin_music_name": "Mann Bhareya",
+  "singername": "B Prakk",
+  "category": {
+    "$oid": "5efb1a181d9ebb31ecb839a6"
+  },
+  "createdAt": {
+    "$date": "2020-07-02T12:29:45.573Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-02T12:29:55.618Z"
+  },
+  "__v": 0,
+  "adminsong": "\\uploads\\admin\\songs/Mann Bharrya.m4a"
+},{
+  "_id": {
+    "$oid": "5efdd4e6785bc76488956f8e"
+  },
+  "admin_music_name": "Duniya",
+  "singername": "Karan Aujla",
+  "category": {
+    "$oid": "5efb1a181d9ebb31ecb839a6"
+  },
+  "createdAt": {
+    "$date": "2020-07-02T12:36:54.152Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-02T12:37:01.062Z"
+  },
+  "__v": 0,
+  "adminsong": "\\uploads\\admin\\songs/Duniya.m4a"
+},{
+  "_id": {
+    "$oid": "5efdd534785bc76488956f8f"
+  },
+  "admin_music_name": "LET 'em PLAY",
+  "singername": "Karan Aujla",
+  "category": {
+    "$oid": "5efb1a181d9ebb31ecb839a6"
+  },
+  "createdAt": {
+    "$date": "2020-07-02T12:38:12.294Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-02T12:38:20.578Z"
+  },
+  "__v": 0,
+  "adminsong": "\\uploads\\admin\\songs/LET 'em PLAY.m4a"
+},{
+  "_id": {
+    "$oid": "5efdd553785bc76488956f90"
+  },
+  "admin_music_name": "Bambiha Bole",
+  "singername": "Karan Aujla",
+  "category": {
+    "$oid": "5efb169aab4ae43784642752"
+  },
+  "createdAt": {
+    "$date": "2020-07-02T12:38:43.323Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-02T12:38:49.738Z"
+  },
+  "__v": 0,
+  "adminsong": "\\uploads\\admin\\songs/Bambiha Bole.m4a"
+}]

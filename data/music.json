@@ -1,0 +1,138 @@
+[{
+  "_id": {
+    "$oid": "5ef0e840ebc52d315c39c6d8"
+  },
+  "name": "dwd",
+  "singername": "dwed",
+  "createdAt": {
+    "$date": "2020-06-22T17:20:00.423Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-22T17:21:15.624Z"
+  },
+  "__v": 0,
+  "song": "\\uploads\\songs/song-1592846475357"
+},{
+  "_id": {
+    "$oid": "5ef0e8e0ebc52d315c39c6d9"
+  },
+  "name": "dnwendo",
+  "singername": "jndndd",
+  "createdAt": {
+    "$date": "2020-06-22T17:22:40.097Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-22T17:22:47.914Z"
+  },
+  "__v": 0,
+  "song": "\\uploads\\songs/song-1592846567667"
+},{
+  "_id": {
+    "$oid": "5ef0e95cebc52d315c39c6da"
+  },
+  "name": "dnwendodewmd",
+  "singername": "jndndd",
+  "createdAt": {
+    "$date": "2020-06-22T17:24:44.979Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-22T17:24:52.478Z"
+  },
+  "__v": 0,
+  "song": "\\uploads\\songs/song-1592846692141"
+},{
+  "_id": {
+    "$oid": "5ef0eb37a0a8aa6398417421"
+  },
+  "name": "sd",
+  "singername": "ad",
+  "createdAt": {
+    "$date": "2020-06-22T17:32:39.453Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-22T17:32:46.705Z"
+  },
+  "__v": 0,
+  "song": "\\uploads\\songs/Duniya.m4a-1592847166444"
+},{
+  "_id": {
+    "$oid": "5ef0eb6bb5213837c88abb96"
+  },
+  "name": "sdfdsf",
+  "singername": "ad",
+  "createdAt": {
+    "$date": "2020-06-22T17:33:31.548Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-22T17:33:38.191Z"
+  },
+  "__v": 0,
+  "song": "\\uploads\\songs/Bambiha Bole.m4a"
+},{
+  "_id": {
+    "$oid": "5ef0ee16b5213837c88abb97"
+  },
+  "name": "Rahul",
+  "singername": "dewan",
+  "createdAt": {
+    "$date": "2020-06-22T17:44:54.144Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-22T17:45:04.140Z"
+  },
+  "__v": 0,
+  "song": "\\uploads\\songs/Mann Bharrya.m4a"
+},{
+  "_id": {
+    "$oid": "5ef0f364b5213837c88abb98"
+  },
+  "name": "sjwqosji",
+  "singername": "powqwio",
+  "createdAt": {
+    "$date": "2020-06-22T18:07:32.092Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-22T18:07:50.856Z"
+  },
+  "__v": 0,
+  "song": "\\uploads\\songs/Jay Shetty's Ultimate Advice for Students & Young People - HOW TO SUCCEED IN LIFE.m4a"
+},{
+  "_id": {
+    "$oid": "5effaf1be7480e520cf79c03"
+  },
+  "createdAt": {
+    "$date": "2020-07-03T22:20:11.320Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-03T22:20:11.320Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f05fb3bfc48c65138b54d06"
+  },
+  "name": "Betterman",
+  "singername": "WestLife",
+  "createdAt": {
+    "$date": "2020-07-08T16:58:35.033Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-08T16:58:43.250Z"
+  },
+  "__v": 0,
+  "song": "\\uploads\\songs/Better Man.m4a"
+},{
+  "_id": {
+    "$oid": "5f07288f7ef8b13c6c4a86fa"
+  },
+  "name": "Best Friend",
+  "singername": "Yelawolf",
+  "createdAt": {
+    "$date": "2020-07-09T14:24:15.416Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-09T14:25:28.272Z"
+  },
+  "__v": 0,
+  "song": "\\uploads\\songs/Best Friend.m4a"
+}]

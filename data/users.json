@@ -1,0 +1,57 @@
+[{
+  "_id": {
+    "$oid": "5ee288dee9ad633724628316"
+  },
+  "name": "Rahul dewan",
+  "password": "rahul123",
+  "email": "rahul@gmail.com",
+  "createdAt": {
+    "$date": "2020-06-11T19:41:18.571Z"
+  },
+  "updatedAt": {
+    "$date": "2020-06-11T19:41:18.571Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f0095a9927d061714e644b4"
+  },
+  "name": "RAHUL DEWAN",
+  "email": "rahuldewan19999@gmail.com",
+  "password": "a04755f2293364be4cda83147c7d492635a7712a",
+  "createdAt": {
+    "$date": "2020-07-04T14:43:53.470Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-04T14:43:53.470Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f00998a67151e6a30542465"
+  },
+  "name": "Rahul Dewan",
+  "email": "rahuldewan998.rd@gmail.com",
+  "password": "c89cca0294c462664544008cb06fc966aca0f176",
+  "createdAt": {
+    "$date": "2020-07-04T15:00:26.782Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-04T15:00:26.782Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f072d2bd81b3a4558435d27"
+  },
+  "name": "pradyuman",
+  "password": "admin123",
+  "email": "pradyuman@admin.com",
+  "createdAt": {
+    "$date": "2020-07-09T14:43:55.876Z"
+  },
+  "updatedAt": {
+    "$date": "2020-07-09T14:43:55.876Z"
+  },
+  "__v": 0
+}]
