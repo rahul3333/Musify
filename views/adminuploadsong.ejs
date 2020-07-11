@@ -6,9 +6,10 @@
     </div>
 <form action="/music/uploadSongAdmin/<%= id%>" method="post" enctype="multipart/form-data">
     <% console.log('id:',id)%>
-    <label for="image">
-        <input type="file" name="adminsong" id="image" style="display:none;"/>
+    <label for="file-upload">
+        <input type="file" name="adminsong" id="file-upload" style="display:none;"/>
         <img src="/images/plus.png" class="plus-form" alt="plus" />
+        <div id="file-upload-filename"></div>
      </label><br>
     <input type="submit" class="button-form" value="Upload...">
 </form>
